@@ -12,10 +12,7 @@
 #ifndef SORT_H
 #define SORT_H
 
-typedef struct point{
-    double x;
-    double y;
-} Point;
+#include "stack.h"
 
 double CrossProduct(Point a, Point b, Point c);
 
