@@ -55,11 +55,11 @@ int ComparePolarAngle(Point anchor, Point p1, Point p2){
 void swap(Point* points, int i, int j) {
     Point temp = points[i];
     points[i] = points[j];
-    points[i] = temp;
+    points[j] = temp;
 }
 
 //slow // bubble sort algorithm
-void bubbleSort(Point points[], int n, Point anchor) {
+void BubbleSort(Point points[], int n, Point anchor) {
     int i, j;
 
     for(i=0; i<n-1; i++) {
@@ -84,7 +84,7 @@ int findAnchor(Point points[], int n) {
 }
 
 // to merge the sorted sub-arrays
-void merge(Point points[], Point anchor, int left, int mid, int right) {
+void Merge(Point points[], int left, int mid, int right, Point anchor) {
    
     int i, j, k;
     // creating indexes for separated arrays
@@ -96,7 +96,7 @@ void merge(Point points[], Point anchor, int left, int mid, int right) {
    Point R[side2];
 
    for(i = 0; i < side1; i++)
-    L[side1] = points[left+i];
+    L[i] = points[left+i];
 
     for(j=0; j< side2; j++)
         R[j] = points[mid + j + 1];
@@ -121,7 +121,7 @@ void merge(Point points[], Point anchor, int left, int mid, int right) {
     }
 }
 
-void mergeSort(Point points[], int n) {
+void MergeSort(Point points[], int n) {
     int signal;
     int left = 1;
     int right = n - 1;
@@ -136,12 +136,12 @@ void mergeSort(Point points[], int n) {
         }
 
         // recursively sorts first half
-        mergeSort(points, mid+1);
+        MergeSort(points, mid+1);
 
         // sorts second half
-        mergeSort(points + mid, n-mid);
+        MergeSort(points + mid, n-mid);
 
         // merges it together
-        merge(points, points[0], left, mid, right);
+        Merge(points, points[0], left, mid, right);
     }
 }
