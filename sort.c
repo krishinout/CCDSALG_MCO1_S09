@@ -142,6 +142,6 @@ void MergeSort(Point points[], int n) {
         MergeSort(points + mid, n-mid);
 
         // merges it together
-        Merge(points, points[0], left, mid, right);
+        Merge(points, left, mid, right, points[0]);
     }
 }
