@@ -1,17 +1,26 @@
 /**
     Group #: 16
 
-    DANIELES, MARICON  S09
-    EDEP , TOBIAS RAIAN  S09
-    SUAZON, KRISHA GEANE  S09 
+    DANIELES, MARICON       S09
+    EDEP , TOBIAS RAIAN     S09
+    SUAZON, KRISHA GEANE    S09 
 
-    PURPOSE OF THIS FILE: (edit this)
+    PURPOSE OF THIS FILE:
+    To test every stack function including edge cases.
 */
 #include <stdio.h>
 #include <stdlib.h>
-// include your own stack C source file
 #include "stack.c"
 
+/*  
+    a. Name of Programmer(s): DANIELES, MARICON & SUAZON, KRISHA GEANE
+    b. Name of Tester(s)    : EDEP, TOBIAS RAIAN
+    c. Code Type -- 100% Human Generated 
+    d. Purpose: this function will test all stack operation and edge cases.
+    e. Return: int - 0 on success
+    f. Parameters: 
+            None
+*/
 int main()
 {
    Stack S;
@@ -113,8 +122,7 @@ int main()
     printf("After pushing MAX_STACKS items: ISEMPTY = %d (should be 0)\n", ISEMPTY(&S));
 
     result = TOP(&S);
-    printf("TOP after full stack = (%.1f, %.1f) (should be (32767.0, 32767.5))\n",
-            result.x, result.y);
+    printf("TOP after full stack = (%.1f, %.1f) (should be (32767.0, 32767.5))\n", result.x, result.y);
 
     
 //TRY PUSHING WHEN STACK ALREADY FULL
@@ -129,12 +137,11 @@ int main()
    printf("If your PUSH is correct, TOP should still be (32767.0, 32767.5)\n");
 
 
-   /* EDGE CASE 6: Pop once from full stack */
+   /* EDGE CASE: Pop once from full stack */
    printf("\nEDGE CASE 6: Pop once from full stack\n");
 
    result = POP(&S);
-   printf("POP from full stack returned (%.1f, %.1f) (should be (32767.0, 32767.5))\n",
-          result.x, result.y);
+   printf("POP from full stack returned (%.1f, %.1f) (should be (32767.0, 32767.5))\n",result.x, result.y);
 
    printf("After one POP: ISFULL = %d (should be 0)\n", ISFULL(&S));
 
